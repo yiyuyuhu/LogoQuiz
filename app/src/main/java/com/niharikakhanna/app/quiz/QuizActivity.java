@@ -54,7 +54,10 @@ public class QuizActivity extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int skip = R.string.skipped;
                 updateQuestion();
+                Toast.makeText(QuizActivity.this, skip, Toast.LENGTH_SHORT)
+                        .show();
                 if(!mQuestionBank[i].isSkipped()) {
                     mQuestionBank[i].setSkipped(true);
                     answered++;
@@ -134,9 +137,8 @@ public class QuizActivity extends AppCompatActivity {
        String answer = mQuestionBank[i].getAnswer();
 
         int messageResId = 0;
-        if(mQuestionBank[i].isSkipped())
-            messageResId = R.string.skipped;
-        else if (userAnswer.equals(answer)&&!mQuestionBank[i].isCheated()) {
+
+        if (userAnswer.equals(answer)&&!mQuestionBank[i].isCheated()) {
             score++;
             mScoreText.setText(""+score);
             messageResId = R.string.correct_toast;
@@ -148,8 +150,7 @@ public class QuizActivity extends AppCompatActivity {
             messageResId = R.string.incorrect_toast;
         }
 
-        Toast.makeText(QuizActivity.this, messageResId, Toast.LENGTH_SHORT)
-                .show();
+        Toast.makeText(QuizActivity.this, messageResId, Toast.LENGTH_SHORT).show();
 
         if(answered == mQuestionBank.length) {
             Intent intent = new Intent(QuizActivity.this,ScoreDisplay.class);
