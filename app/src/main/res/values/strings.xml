@@ -21,7 +21,7 @@
     <string name="game_ended">Congratulations! You have successfully completed the Logo Quiz. Your score for this round is:</string>
     <string name="previous_scores">Previous Scores:</string>
     <string name="replay">Replay Quiz</string>
-    <string name="skipped">You already skipped this question</string>
+    <string name="skipped">You have skipped this question</string>
     <string name="rules">Multiplayer Game Rules: Each player will be shown five same logos one at a time. The player who answers
     more questions correctly will win the game.</string>
     <string name="multiplay">Start Multiplayer Game</string>
